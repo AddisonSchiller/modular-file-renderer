@@ -5,10 +5,10 @@ import furl
 from mfr.core import utils
 from mfr.core import extension
 
-from mfr.extensions.unoconv import settings
+from mfr.extensions.libreoffice import settings
 
 
-class UnoconvRenderer(extension.BaseRenderer):
+class LibreOfficeRenderer(extension.BaseRenderer):
 
     def __init__(self, metadata, file_path, url, assets_url, export_url):
         super().__init__(metadata, file_path, url, assets_url, export_url)

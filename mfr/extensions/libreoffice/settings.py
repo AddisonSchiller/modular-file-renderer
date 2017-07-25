@@ -3,12 +3,10 @@ import os
 from mfr import settings
 
 
-config = settings.child('UNOCONV_EXTENSION_CONFIG')
+config = settings.child('LIBREOFFICE_EXTENSION_CONFIG')
 
-UNOCONV_BIN = config.get('UNOCONV_BIN', '/usr/bin/unoconv')
+LIBREOFFICE_BIN = config.get('LIBREOFFICE_BIN', '/usr/bin/soffice')
 
-ADDRESS = config.get('SERVER', os.environ.get('UNOCONV_PORT_2002_TCP_ADDR', '127.0.0.1'))
-PORT = config.get('PORT', os.environ.get('UNOCONV_PORT_2002_TCP_PORT', '2002'))
 
 DEFAULT_RENDER = {'renderer': '.pdf', 'format': 'pdf'}
 

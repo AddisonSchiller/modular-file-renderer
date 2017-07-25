@@ -19,9 +19,6 @@ RUN apt-get update \
         libxml2-dev \
         libxslt1-dev \
         zlib1g-dev \
-    # unoconv dependencies
-    && apt-get install -y \
-        unoconv \
     # pspp dependencies
     && apt-get install -y \
         pspp \
@@ -45,7 +42,6 @@ RUN apt-get update \
         curl \
     && rm -rf /var/lib/apt/lists/*
 
-# ensure unoconv can locate the uno library
 ENV PYTHONPATH=/usr/lib/python3/dist-packages
 
 RUN mkdir -p /code
@@ -67,6 +63,21 @@ ARG GIT_COMMIT=
 ENV GIT_COMMIT ${GIT_COMMIT}
 
 RUN python setup.py develop
+
+# get libre office for conversions
+RUN apt-get update \
+    && apt-get -y -q install \
+        libreoffice\
+        libreoffice-writer \
+        ure \
+        libreoffice-java-common \
+        libreoffice-core \
+        libreoffice-common \
+        && apt-get -q -y remove \
+            libreoffice-gnome \
+    && apt-get clean \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 7778
 

@@ -23,14 +23,15 @@ For MacOSX users:
 ```bash
 brew install python3
 # optional, needed for some converters
-brew install pspp unoconv
+brew install pspp 
+brew cask install libreoffice
 ```
 For Ubuntu users:
 
 ```bash
 apt-get install python3
 # optional, needed for some converters
-apt-get install pspp unoconv
+apt-get install pspp libreoffice
 ```
 
 After installing python3.5, create the virtual environment with the following commands:
