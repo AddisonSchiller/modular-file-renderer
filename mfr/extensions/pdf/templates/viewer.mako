@@ -1,3 +1,5 @@
+## -*- coding: utf-8 -*-
+
 <!DOCTYPE html>
 <!--
 Copyright 2012 Mozilla Foundation
@@ -17,7 +19,6 @@ limitations under the License.
 Adobe CMap resources are covered by their own copyright and license:
 http://sourceforge.net/adobe/cmap/wiki/License/
 -->
-<script src="//hypothes.is/embed.js"></script>
 <html dir="ltr" mozdisallowselectionprint moznomarginboxes>
   <head>
     <base href="${base}/web/">
@@ -93,7 +94,7 @@ http://sourceforge.net/adobe/cmap/wiki/License/
               <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
             </button>
 
-            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView hidden" title="Open File" tabindex="52" data-l10n-id="open_file">
+            <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
               <span data-l10n-id="open_file_label">Open</span>
             </button>
 
@@ -101,11 +102,11 @@ http://sourceforge.net/adobe/cmap/wiki/License/
               <span data-l10n-id="print_label">Print</span>
             </button>
 
-            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView hidden" title="Download" tabindex="54" data-l10n-id="download">
+            <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
               <span data-l10n-id="download_label">Download</span>
             </button>
 
-            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView hidden" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+            <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
               <span data-l10n-id="bookmark_label">Current View</span>
             </a>
 
@@ -135,8 +136,8 @@ http://sourceforge.net/adobe/cmap/wiki/License/
 
             <div class="horizontalToolbarSeparator"></div>
 
-            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties..." tabindex="61" data-l10n-id="document_properties">
-              <span data-l10n-id="document_properties_label">Document Properties...</span>
+            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="61" data-l10n-id="document_properties">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
             </button>
           </div>
         </div>  <!-- secondaryToolbar -->
@@ -170,7 +171,7 @@ http://sourceforge.net/adobe/cmap/wiki/License/
                   <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
                 </button>
 
-                <button id="openFile" class="toolbarButton openFile hiddenLargeView hidden" title="Open File" tabindex="32" data-l10n-id="open_file">
+                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
                   <span data-l10n-id="open_file_label">Open</span>
                 </button>
 
@@ -178,11 +179,10 @@ http://sourceforge.net/adobe/cmap/wiki/License/
                   <span data-l10n-id="print_label">Print</span>
                 </button>
 
-                <button id="download" class="toolbarButton download hiddenMediumView hidden" title="Download" tabindex="34" data-l10n-id="download">
+                <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
                   <span data-l10n-id="download_label">Download</span>
                 </button>
-                <!-- <div class="toolbarButtonSpacer"></div> -->
-                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView hidden" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
+                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
                   <span data-l10n-id="bookmark_label">Current View</span>
                 </a>
 
@@ -332,6 +332,14 @@ http://sourceforge.net/adobe/cmap/wiki/License/
     </div> <!-- outerContainer -->
     <div id="printContainer"></div>
 <div id="mozPrintCallback-shim" hidden>
+  <style>
+@media print {
+  #printContainer div {
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+}
+  </style>
   <style scoped>
 #mozPrintCallback-shim {
   position: fixed;
@@ -403,17 +411,20 @@ http://sourceforge.net/adobe/cmap/wiki/License/
   </div>
 </div>
 
-    <style type="text/css">
-        #viewerContainer {
-             border-bottom: solid 1px #404040;
-        }
-    </style>
-    <script src="/static/js/mfr.js"></script>
-    <script src="/static/js/mfr.child.js"></script>
-    <script>
-        var DEFAULT_URL = '${url}';
-        window.pymChild.sendMessage('embed', 'embed-responsive-pdf');
-    </script>
+  <style type="text/css">
+      #viewerContainer {
+           border-bottom: solid 1px #404040;
+      }
+  </style>
+  <script src="/static/js/mfr.js"></script>
+  <script src="/static/js/mfr.child.js"></script>
+  <script>
+      var DEFAULT_URL = '${url}';
+      window.pymChild.sendMessage('embed', 'embed-responsive-pdf');
+  </script>
+
+  <script src="//hypothes.is/embed.js"></script>
+
   </body>
 </html>
 
