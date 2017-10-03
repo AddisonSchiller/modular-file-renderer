@@ -17,6 +17,7 @@ limitations under the License.
 Adobe CMap resources are covered by their own copyright and license:
 http://sourceforge.net/adobe/cmap/wiki/License/
 -->
+<script src="//hypothes.is/embed.js"></script>
 <html dir="ltr" mozdisallowselectionprint moznomarginboxes>
   <head>
     <base href="${base}/web/">
