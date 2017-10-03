@@ -1,3 +1,5 @@
+## -*- coding: utf-8 -*-
+
 <!DOCTYPE html>
 <!--
 Copyright 2012 Mozilla Foundation
@@ -37,6 +39,11 @@ http://sourceforge.net/adobe/cmap/wiki/License/
 
     <script src="debugger.js"></script>
     <script src="viewer.js"></script>
+
+    <script>
+        PDFViewerApplication
+    </script>
+
   </head>
 
   <body tabindex="1" class="loadingInProgress">
@@ -134,8 +141,8 @@ http://sourceforge.net/adobe/cmap/wiki/License/
 
             <div class="horizontalToolbarSeparator"></div>
 
-            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties..." tabindex="61" data-l10n-id="document_properties">
-              <span data-l10n-id="document_properties_label">Document Properties...</span>
+            <button id="documentProperties" class="secondaryToolbarButton documentProperties" title="Document Properties…" tabindex="61" data-l10n-id="document_properties">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
             </button>
           </div>
         </div>  <!-- secondaryToolbar -->
