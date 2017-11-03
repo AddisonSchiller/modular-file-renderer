@@ -1,5 +1,5 @@
+ <img style="max-width: 800; max-height: 800;" src="${url}">   
 
-<img style="max-width: 500; max-height: 500;" src="${url}">
 <script src="/static/js/mfr.js"></script>
 <script src="/static/js/mfr.child.js"></script>
 
