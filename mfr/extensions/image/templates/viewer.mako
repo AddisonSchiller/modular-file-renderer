@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="${base}/css/Magnifier.css">
 
 <img id="thumb" src="${url}">
-<div class="magnifier-preview" id="preview" style="width: 500px; height: 500px"></div>
+<div class="magnifier-preview" id="preview" style="width: 200px; height: 200px"></div>
 
 <script type="text/javascript">
 var evt = new Event(),
@@ -13,7 +13,8 @@ var evt = new Event(),
 m.attach({
     thumb: '#thumb',
     large: '${url}',
-    largeWrapper: 'preview'
+    largeWrapper: 'preview',
+    zoom: 6
 });
 </script>
 
